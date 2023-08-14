@@ -7,80 +7,98 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="MutualFund")
+@Table(name="MUTUALFUND")
 public class MutualFund {
 
 	@Id
-	int FundID ;
-	String FundName;
-	double AssetsUnderManagement, CurrentNAV, ExpenseRatio, ExitLoad;
-	int ManagerID;
-	Date InceptionDate;
+	int fundId ;
+	String fundName;
+	double assetsUnderManagement, currentNAV, expenseRatio, exitLoad;
+	int managerId;
+	Date inceptionDate;
 	
 	public MutualFund() {
 		super();
 	}
-	
-	public MutualFund(int fundID, String fundName, double assetsUnderManagement, double currentNAV, double expenseRatio,
-			double exitLoad, int managerID, Date inceptionDate) {
+
+	public MutualFund(int fundId, String fundName, double assetsUnderManagement, double currentNAV, double expenseRatio,
+			double exitLoad, int managerId, Date inceptionDate) {
 		super();
-		FundID = fundID;
-		FundName = fundName;
-		AssetsUnderManagement = assetsUnderManagement;
-		CurrentNAV = currentNAV;
-		ExpenseRatio = expenseRatio;
-		ExitLoad = exitLoad;
-		ManagerID = managerID;
-		InceptionDate = inceptionDate;
+		this.fundId = fundId;
+		this.fundName = fundName;
+		this.assetsUnderManagement = assetsUnderManagement;
+		this.currentNAV = currentNAV;
+		this.expenseRatio = expenseRatio;
+		this.exitLoad = exitLoad;
+		this.managerId = managerId;
+		this.inceptionDate = inceptionDate;
 	}
-	
-	
-	public int getFundID() {
-		return FundID;
+
+	public int getFundId() {
+		return fundId;
 	}
-	public void setFundID(int fundID) {
-		FundID = fundID;
+
+	public void setFundId(int fundId) {
+		this.fundId = fundId;
 	}
+
 	public String getFundName() {
-		return FundName;
+		return fundName;
 	}
+
 	public void setFundName(String fundName) {
-		FundName = fundName;
+		this.fundName = fundName;
 	}
+
 	public double getAssetsUnderManagement() {
-		return AssetsUnderManagement;
+		return assetsUnderManagement;
 	}
+
 	public void setAssetsUnderManagement(double assetsUnderManagement) {
-		AssetsUnderManagement = assetsUnderManagement;
+		this.assetsUnderManagement = assetsUnderManagement;
 	}
+
 	public double getCurrentNAV() {
-		return CurrentNAV;
+		return currentNAV;
 	}
+
 	public void setCurrentNAV(double currentNAV) {
-		CurrentNAV = currentNAV;
+		this.currentNAV = currentNAV;
 	}
+
 	public double getExpenseRatio() {
-		return ExpenseRatio;
+		return expenseRatio;
 	}
+
 	public void setExpenseRatio(double expenseRatio) {
-		ExpenseRatio = expenseRatio;
+		this.expenseRatio = expenseRatio;
 	}
+
 	public double getExitLoad() {
-		return ExitLoad;
+		return exitLoad;
 	}
+
 	public void setExitLoad(double exitLoad) {
-		ExitLoad = exitLoad;
+		this.exitLoad = exitLoad;
 	}
-	public int getManagerID() {
-		return ManagerID;
+
+	public int getManagerId() {
+		return managerId;
 	}
-	public void setManagerID(int managerID) {
-		ManagerID = managerID;
+
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
 	}
+
 	public Date getInceptionDate() {
-		return InceptionDate;
+		return inceptionDate;
 	}
+
 	public void setInceptionDate(Date inceptionDate) {
-		InceptionDate = inceptionDate;
+		this.inceptionDate = inceptionDate;
 	}
+	
+	
+	
+	
 }

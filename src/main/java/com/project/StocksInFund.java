@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="StocksInFund") 
+@Table(name="STOCKSINFUND") 
 public class StocksInFund {
 	
 	@Id
