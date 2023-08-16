@@ -19,5 +19,20 @@ public class InvestmentService {
 		ivRepository.save(newInvestment);
 		return "Successfully added a new investment!";
 	}
+
+	public ArrayList<Investment> getInvestmentsById(int investorid) {
+
+		ArrayList<Investment> allInvestmentsforInvestor = new ArrayList<Investment>();
+		
+		 for(Investment investment : ivRepository.findAll()) {
+			 if(investment.getInvestorId()==investorid) {
+				 allInvestmentsforInvestor.add(investment);
+			 }
+		 }
+		 System.out.println(allInvestmentsforInvestor);
+		 return allInvestmentsforInvestor;
+
+		
+	}
 	
 }

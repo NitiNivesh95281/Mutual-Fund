@@ -93,7 +93,10 @@ public class Stock {
 		this.highPrice = highPrice;
 	}
 
-	
+//	public static getStockInfo(int stockID) {
+//		Stock st= new Stock();
+//		
+//	}
 	
 	
 }

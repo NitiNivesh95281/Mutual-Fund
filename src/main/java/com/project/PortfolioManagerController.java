@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,6 +31,10 @@ public class PortfolioManagerController {
 		return pm.addPortfolioManager(newPortfolioManager); 
 	}
 	
+	@RequestMapping(value="/portfoliomanagers/getAllMF/{managerId}", method=RequestMethod.GET)
+	public ArrayList<MutualFund> getAllMutualFunds(@PathVariable int managerId){
+		return pm.getAllMutualFunds(managerId);
+	}
 	
 	
 

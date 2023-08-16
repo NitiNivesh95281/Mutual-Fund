@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +27,11 @@ public class MutualFundController {
 		return mfs.addAMutualFund(newMutualFund);
 	}
 	
+	@RequestMapping(value="/mutualfund/getstockweights/{mfid}", method=RequestMethod.GET)
+	public ArrayList<StockInfo> getStockComposition(@PathVariable int mfid) {
+		
+			return mfs.getStockComposition(mfid);
+	}
 	
 	@RequestMapping(value="/landing", method=RequestMethod.GET)
 	public String m1() {
