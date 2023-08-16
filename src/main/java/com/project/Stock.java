@@ -2,19 +2,37 @@ package com.project;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
 
 @Entity
 @Table(name="Stock")
 public class Stock {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="stockId",insertable=false)
 	int stockId;
 	String stockTicker;
-	Date dateOfRecord;
 	double openingPrice, lowPrice, closingPrice, highPrice;
+	
+	@Temporal(TemporalType.DATE)
+	Date dateOfRecord;
+	
+	
+	@PrePersist
+	protected void onCreate() {
+		dateOfRecord= new Date();
+	}
 	
 	public Stock() {
 		super();

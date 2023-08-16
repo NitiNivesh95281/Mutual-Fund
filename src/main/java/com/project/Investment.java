@@ -2,19 +2,34 @@ package com.project;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="Investment")
 public class Investment {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="investmentId", insertable=false, updatable=false)
 	int investmentId;
 	int investorId, fundId;
 	double amountInvested;
+	
+	@Temporal(TemporalType.DATE)
 	Date dateOfInvestment;
+	
+	@PrePersist
+	protected void onCreate() {
+		dateOfInvestment= new Date();
+	}
 	
 	public Investment() {
 		super();
