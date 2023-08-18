@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -103,6 +102,14 @@ public class MutualFund {
 	public void setInceptionDate(Date inceptionDate) {
 		this.inceptionDate = inceptionDate;
 	}
+
+	@Override
+	public String toString() {
+		return "MutualFund [fundId=" + fundId + ", fundName=" + fundName + ", assetsUnderManagement="
+				+ assetsUnderManagement + ", currentNAV=" + currentNAV + ", expenseRatio=" + expenseRatio
+				+ ", exitLoad=" + exitLoad + ", managerId=" + managerId + ", inceptionDate=" + inceptionDate + "]";
+	}
+	
 	
 	
 	

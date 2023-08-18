@@ -12,10 +12,11 @@ import javax.persistence.Table;
 public class Investor {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY) 
-	@Column(name = "investorId", insertable = false, updatable = false)
-	int investorId;
-	String firstName, lastName, Email,contactNumber;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="investorId", insertable=false, updatable=false)
+	Integer investorId;
+	@Column
+	String firstName, lastName, email,contactNumber, password;
 	
 	
 	public Investor() {
@@ -24,22 +25,31 @@ public class Investor {
 	}
 
 
-	public Investor(int investorId, String firstName, String lastName, String email, String contactNumber) {
+	public Investor(int investorId, String firstName, String lastName, String email, String contactNumber,
+			String password) {
 		super();
 		this.investorId = investorId;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		Email = email;
+		this.email = email;
 		this.contactNumber = contactNumber;
+		this.password = password;
 	}
 
 
-	public int getInvestorId() {
+	@Override
+	public String toString() {
+		return "Investor [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", contactNumber="
+				+ contactNumber + ", password=" + password + "]";
+	}
+
+
+	public int getId() {
 		return investorId;
 	}
 
 
-	public void setInvestorId(int investorId) {
+	public void setId(int investorId) {
 		this.investorId = investorId;
 	}
 
@@ -65,12 +75,12 @@ public class Investor {
 
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 
@@ -84,12 +94,15 @@ public class Investor {
 	}
 
 
-	
-	
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	
-	
-	
-	
-	
+
 }

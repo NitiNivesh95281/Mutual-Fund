@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class StockIdentifier implements Serializable {
 
-	int fundId;
-	int stockId;
+	public int fundId;
+	public int stockId;
 		
 	public StockIdentifier() {
 		super();
