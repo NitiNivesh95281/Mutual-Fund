@@ -15,14 +15,14 @@ public class InvestorService {
 	InvestorRepository iRepository;
 
 
-	public boolean authenticate(String email, String password) {
+	public Investor authenticate(String email, String password) {
 		Investor investor = iRepository.findByEmail(email);
         
-        if (investor != null) {
+        if (investor != null && validatePassword(password, investor.getPassword())) {
             // Validate password (e.g., hash and compare)
-            return validatePassword(password, investor.getPassword());
+            return investor;
         }
-        return false;
+        return null; //Authentication failed
     }
 
     	private boolean validatePassword(String inputPassword, String storedPasswordHash) {
@@ -36,7 +36,6 @@ public class InvestorService {
 	}
 
 	public String addInvestor(Investor newInvestor) {
-
 		iRepository.save(newInvestor);
 		return "Successfully inserted a new investor";
 	}

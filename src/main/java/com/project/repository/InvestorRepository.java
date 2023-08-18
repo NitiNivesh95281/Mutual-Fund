@@ -8,3 +8,4 @@ public interface InvestorRepository extends CrudRepository<Investor, Integer> {
 	Investor findByEmail(String email);
 
 }
+ 

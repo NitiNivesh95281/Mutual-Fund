@@ -1,6 +1,7 @@
 package com.project.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class InvestorController {
 	
 
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody Map<String, String> requestMap) {
+	public ResponseEntity<?> login(@RequestBody Map<String, String> requestMap) {
         // Basic input validation
 		 String email = requestMap.get("email");
 	        String password = requestMap.get("password");
@@ -35,10 +36,18 @@ public class InvestorController {
             return ResponseEntity.badRequest().body("email and password are required.");
         }
         // Call the authentication logic in your service
-        boolean isAuthenticated = is.authenticate(email, password);
+        Investor investor = is.authenticate(email, password);
 
-        if (isAuthenticated) {
-            return ResponseEntity.ok("Login successful");
+        if (investor !=null) {
+        	Map<String, Object> response = new HashMap<String, Object>();
+        	
+        	response.put("status", "success");
+        	response.put("message", "Login successful");
+        	response.put("investorid", investor.getId());
+        	
+//        	System.out.println(response.get("investorid"));
+        	System.out.println(response.getClass());
+            return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
