@@ -27,6 +27,11 @@ public class MutualFundController {
 		return mfs.getAllMutualFunds();
 	}
 	
+	@RequestMapping(value="/mutualfunds/id/{mfid}", method=RequestMethod.GET)
+	public MutualFund getMutualFundInfo(@PathVariable int mfid) {
+		return mfs.getMutualFundInfo(mfid);
+	}
+	
 	@RequestMapping(value="/mutualfund/add", method=RequestMethod.POST)
 	public String addAMutualFund(@RequestBody MutualFund newMutualFund) {
 		return mfs.addAMutualFund(newMutualFund);

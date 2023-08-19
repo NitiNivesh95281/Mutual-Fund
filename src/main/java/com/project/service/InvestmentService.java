@@ -23,6 +23,18 @@ public class InvestmentService {
 		return "Successfully added a new investment!";
 	}
 
+	public Investment getInvestmentDetails(int investmentId) {
+		
+//		for(Investment i : ivRepository.findAll()) {
+//			if(i.getInvestmentId()==investmentId)
+//				return i;
+//		}
+//		
+//		return null;
+		
+		return ivRepository.findInvestmentByInvestmentId(investmentId);
+	}
+	
 	public ArrayList<Investment> getInvestmentsById(int investorid) {
 
 		ArrayList<Investment> allInvestmentsforInvestor = new ArrayList<Investment>();

@@ -33,6 +33,10 @@ public class MutualFundService {
 		 
 		 return "Mutual Fund has been successfully added!";
 	}
+	
+	public MutualFund getMutualFundInfo(int mfid) {
+		return mfRepository.findOne(mfid);
+	}
 
 	public ArrayList<StockInfo> getStockComposition(int mfid) {
 		

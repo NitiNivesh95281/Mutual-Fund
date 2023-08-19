@@ -8,4 +8,5 @@ import com.project.Investment;
 
 public interface InvestmentRepository extends CrudRepository<Investment, Number>  {
 	ArrayList<Investment>  findInvestmentsByInvestorId(int id);
+	Investment findInvestmentByInvestmentId(int id);
 }
