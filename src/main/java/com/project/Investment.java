@@ -23,6 +23,9 @@ public class Investment {
 	int investorId, fundId;
 	double amountInvested;
 	
+	@Column(name="Transaction_Type")
+	String transactionType;
+	
 	@Temporal(TemporalType.DATE)
 	Date dateOfInvestment;
 	
@@ -43,6 +46,7 @@ public class Investment {
 		this.investorId = investorId;
 		this.fundId = fundId;
 		this.amountInvested = amountInvested;
+		this.transactionType = transactionType;
 		this.dateOfInvestment = dateOfInvestment;
 	}
 
@@ -77,6 +81,14 @@ public class Investment {
 
 	public void setAmountInvested(double amountInvested) {
 		this.amountInvested = amountInvested;
+	}
+	
+	public String getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
 	}
 
 	public Date getDateOfInvestment() {

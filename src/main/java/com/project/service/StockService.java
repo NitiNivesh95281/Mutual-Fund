@@ -22,7 +22,13 @@ public class StockService {
 
 		return (ArrayList<Stock>) sRepository.findAll();
 	}
+	
+	public ArrayList<Stock> getAllStocksBy1(){
 
+		return (ArrayList<Stock>) sRepository.findStocksByCustomQuery();
+	}
+
+	
 	
 	public String addStocks(@RequestBody Stock newStock ){
 

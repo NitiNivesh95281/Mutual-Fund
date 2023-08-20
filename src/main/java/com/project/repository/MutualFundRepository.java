@@ -1,9 +1,9 @@
 package com.project.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.project.MutualFund;
 
-public interface MutualFundRepository extends CrudRepository<MutualFund, Integer>  {
+public interface MutualFundRepository extends JpaRepository<MutualFund, Integer>  {
 
 }

@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Built-By: Ayush Varma
+Built-By: Nikhil Jain
 Build-Jdk: 11.0.20
 Implementation-Title: Mutual-Fund-Project
 Implementation-Version: 0.0.1-SNAPSHOT

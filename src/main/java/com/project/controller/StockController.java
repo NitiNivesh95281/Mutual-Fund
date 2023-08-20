@@ -27,6 +27,12 @@ public class StockController {
 		return ss.getAllStocks();
 	}
 	
+	@RequestMapping(value="/stocks/byid", method=RequestMethod.GET)
+	public ArrayList<Stock> getAllStocksBy1(){
+		
+		return ss.getAllStocksBy1();
+	}
+	
 	@RequestMapping(value="/stocks/add", method=RequestMethod.POST)
 	public String addStocks(@RequestBody Stock newStock ){
 	

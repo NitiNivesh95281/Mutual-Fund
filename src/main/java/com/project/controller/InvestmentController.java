@@ -39,6 +39,11 @@ public class InvestmentController {
 	}
 	
 	
+	@RequestMapping(value="/investments/investmentid/{investmentId}", method=RequestMethod.GET)
+	public Investment getInvestmentbyInvestmentId(@PathVariable int  investmentId) {
+		return is.getInvestmentDetails(investmentId);
+	}
+	
 	
 	
 }
