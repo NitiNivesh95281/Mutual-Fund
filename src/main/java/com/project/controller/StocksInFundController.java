@@ -13,7 +13,6 @@ import com.project.StocksInFund;
 import com.project.service.StocksInFundService;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class StocksInFundController {
 
 	@Autowired

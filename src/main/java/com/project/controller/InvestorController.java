@@ -19,7 +19,6 @@ import com.project.Investor;
 import com.project.service.InvestorService;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class InvestorController {
 
 	@Autowired

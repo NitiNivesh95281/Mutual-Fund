@@ -84,12 +84,12 @@ import com.project.Stock;
 import com.project.StockIdentifier;
 import com.project.StockInfo;
 import com.project.StocksInFund;
+import com.project.repository.StockRepository;
 import com.project.service.MutualFundService;
 import com.project.service.StockService;
 import com.project.service.StocksInFundService;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class MutualFundController {
 
 	@Autowired
@@ -97,6 +97,9 @@ public class MutualFundController {
 	
 	@Autowired
 	StockService ss;
+	
+	@Autowired
+	StockRepository sr;
 	
 	
 	@Autowired
@@ -167,7 +170,15 @@ public class MutualFundController {
             int stockId = Integer.parseInt(stockMap.get("stockID").toString());
             double weightage = ((Number) stockMap.get("weightage")).doubleValue();
                 
-                
+            
+            double stock_price = sr.findStocksPriceById(stockId);
+            System.out.println(stock_price);
+            
+            double aum = 1000000000;
+            
+            double unit = (aum * weightage)/ (100 * stock_price);
+            
+            System.out.println(unit);
             System.out.println(stockId);
             System.out.println(weightage);
             System.out.println(createdMutualFund.getFundId());
@@ -181,6 +192,7 @@ public class MutualFundController {
             StocksInFund stocksInFund = new StocksInFund();
             stocksInFund.setIdentifier(stockIdentifier);
             stocksInFund.setStockWeight(weightage);
+            stocksInFund.setUnit(unit);
             System.out.println(stocksInFund);
              
             sif.addStocksWeight(stocksInFund);

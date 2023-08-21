@@ -15,7 +15,6 @@ import com.project.PortfolioManager;
 import com.project.service.PortfolioManagerService;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class PortfolioManagerController {
 
 	@Autowired

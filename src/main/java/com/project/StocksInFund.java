@@ -12,15 +12,27 @@ public class StocksInFund {
 	@EmbeddedId
 	StockIdentifier identifier;
 	double stockWeight;
+	double unit;
 	
+	
+	
+	public double getUnit() {
+		return unit;
+	}
+
+	public void setUnit(double unit) {
+		this.unit = unit;
+	}
+
 	public StocksInFund() {
 		super();
 	}
 
-	public StocksInFund(StockIdentifier identifier, double stockWeight) {
+	public StocksInFund(StockIdentifier identifier, double stockWeight, double unit) {
 		super();
 		this.identifier = identifier;
 		this.stockWeight = stockWeight;
+		this.unit=unit;
 	}
 
 	public StockIdentifier getIdentifier() {

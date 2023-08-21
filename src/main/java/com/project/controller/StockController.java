@@ -65,7 +65,6 @@ import com.project.Stock;
 import com.project.service.StockService;
 
 @RestController
-@CrossOrigin(origins = "*")
 public class StockController {
 
 	@Autowired
