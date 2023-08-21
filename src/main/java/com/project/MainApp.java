@@ -56,9 +56,9 @@ public class MainApp {
 				"crud opertions customer",
 				"1.0",
 				"Free APIs",
-				new springfox.documentation.service.Contact("Guru", "guru.com", "java.guru@gmail.com"),
+				new springfox.documentation.service.Contact("Ayush", "ayushvarma.com", "ayushvarma04@gmail.com"),
 				"API license",
-				"http://www.guru.com",
+				"http://www.ayushvarma.com",
 				Collections.emptyList()
 				
 				);
