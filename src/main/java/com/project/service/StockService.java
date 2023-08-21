@@ -1,6 +1,7 @@
 package com.project.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,4 +37,15 @@ public class StockService {
 		return sRepository.findOne(stockId);
 	}
 
+
+//	public ArrayList<Stock> getStockInfoByDate(String date) {
+//		// TODO Auto-generated method stub
+//		return sRepository.findByDateOfRecord(date);
+//	}
+
+	
+	public ArrayList<Stock> getAllStocksBy1(){
+
+		return (ArrayList<Stock>) sRepository.findStocksByCustomQuery();
+	}
 }
