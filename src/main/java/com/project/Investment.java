@@ -22,6 +22,8 @@ public class Investment {
 	int investmentId;
 	int investorId, fundId;
 	double amountInvested;
+	double units;
+	
 	
 	@Column(name="Transaction_Type")
 	String transactionType;
@@ -39,7 +41,7 @@ public class Investment {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Investment(int investmentId, int investorId, int fundId, double amountInvested, String transactionType,
+	public Investment(int investmentId, int investorId, int fundId, double amountInvested, String transactionType, double units,
 			Date dateOfInvestment) {
 		super();
 		this.investmentId = investmentId;
@@ -48,6 +50,7 @@ public class Investment {
 		this.amountInvested = amountInvested;
 		this.transactionType = transactionType;
 		this.dateOfInvestment = dateOfInvestment;
+		this.units=units;
 	}
 
 	public int getInvestmentId() {
@@ -98,6 +101,21 @@ public class Investment {
 		this.dateOfInvestment = dateOfInvestment;
 	}
 	
+	public double getUnits() {
+		return units;
+	}
+
+	public void setUnits(double units) {
+		this.units = units;
+	}
+
+	@Override
+	public String toString() {
+		return "Investment [investmentId=" + investmentId + ", investorId=" + investorId + ", fundId=" + fundId
+				+ ", amountInvested=" + amountInvested + ", units=" + units + ", transactionType=" + transactionType
+				+ ", dateOfInvestment=" + dateOfInvestment + "]";
+	}
+
 
 	
 	

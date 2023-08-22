@@ -248,6 +248,12 @@ public class MutualFundController {
 			return mfs.getStockComposition(mfid);
 	}
 	
+	
+	@RequestMapping(value="/investor/mfs/{investorId}", method=RequestMethod.GET)
+	public ArrayList<MutualFund> getListOfInvestedMutualFundsByInvestor(@PathVariable int investorId){
+		return mfs.getListOfInvestedMutualFundsByInvestor(investorId);
+	}
+	
 
 }
 

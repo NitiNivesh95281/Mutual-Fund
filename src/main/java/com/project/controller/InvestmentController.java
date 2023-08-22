@@ -43,5 +43,11 @@ public class InvestmentController {
 		return is.getInvestmentDetails(investmentId);
 	}
 	
+
+	
+	@RequestMapping(value="/investments/getunits/{investorId}/{fundId}", method=RequestMethod.GET)
+	public double getTotalUnitsForInvestorForAFund(@PathVariable int  investorId, @PathVariable int fundId) {
+		return is.getTotalUnitsForInvestorForAFund(investorId, fundId);
+	}
 	
 }

@@ -80,6 +80,7 @@ import com.project.MutualFund;
 import com.project.Stock;
 import com.project.StockInfo;
 import com.project.StocksInFund;
+import com.project.repository.InvestmentRepository;
 import com.project.repository.MutualFundRepository;
 import com.project.repository.StockRepository;
 import com.project.repository.StocksInFundRepsoitory;
@@ -93,6 +94,8 @@ public class MutualFundService {
 	StocksInFundRepsoitory sifRepository;
 	@Autowired
 	StockRepository sRepository;
+	@Autowired
+	InvestmentService ivService;
 
 	public ArrayList<MutualFund> getAllMutualFunds() {
 		return (ArrayList<MutualFund>) mfRepository.findAll();
@@ -141,6 +144,14 @@ public class MutualFundService {
 		System.out.println(allStockInfo);
 //		return allStocksWeight;
 		return allStockInfo;
+	}
+	
+	
+	public ArrayList<MutualFund> getListOfInvestedMutualFundsByInvestor(int investorId){
+		
+		Iterable<Integer> ids= ivService.getDistinctFundIdsByInvestorId(investorId);
+		return (ArrayList<MutualFund>) mfRepository.findAll(ids);
+		
 	}
 
 }
